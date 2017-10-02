@@ -30,16 +30,6 @@ for s=1:length(subjects)
         av1 = mean(timing1_data_all{:,5});
         av2 = mean(timing2_data_all{:,5});
 
-%         cur_hits1 = mean(nonzeros(timing1_data{find(timing1_data{:,5}>0),3}));
-%         cur_miss1 = mean(nonzeros(timing1_data{find(timing1_data{:,5}==0),3}));
-%         cur_hits2 = mean(nonzeros(timing2_data{find(timing2_data{:,5}>0),3}));
-%         cur_miss2 = mean(nonzeros(timing2_data{find(timing2_data{:,5}==0),3}));
-% 
-%         reac_hits1 = mean(nonzeros(timing1_data{find(timing1_data{:,5}>0),4}));
-%         reac_miss1 = mean(nonzeros(timing1_data{find(timing1_data{:,5}==0),4}));
-%         reac_hits2 = mean(nonzeros(timing2_data{find(timing2_data{:,5}>0),4}));
-%         reac_miss2 = mean(nonzeros(timing2_data{find(timing2_data{:,5}==0),4}));
-
         % calculate results with curiosity as independent measure
         timing1_data = sortrows(timing1_data_all,3);
         timing2_data = sortrows(timing2_data_all,3);
@@ -76,23 +66,13 @@ for s=1:length(subjects)
         reac2_3 = mean(timing2_data{find(timing2_data{:,4}==3),5});
         reac2_3_tr = length(find(timing2_data{:,4}==3));
 
-    elseif subjects(s) == 23 % read in directly as this subjects was not in the congruency set
+    elseif subjects(s) == 23 % read in directly as this subject was not in the congruency set
         % read in excelfile
         timing1_data_all = xlsread(fullfile('..','logfiles',sprintf('s%i',subjects(s)),sprintf('pic_desc_s%i_timing.xlsx',subjects(s))),1,'C:E');   
         timing2_data_all = xlsread(fullfile('..','logfiles',sprintf('s%i',subjects(s)),sprintf('pic_desc_s%i_timing.xlsx',subjects(s))),2,'C:E'); 
 
         av1 = mean(timing1_data_all(:,3));
         av2 = mean(timing2_data_all(:,3));
-
-%         cur_hits1 = mean(nonzeros(timing1_data(find(timing1_data(:,3)>0),1)));
-%         cur_miss1 = mean(nonzeros(timing1_data(find(timing1_data(:,3)==0),1)));
-%         cur_hits2 = mean(nonzeros(timing2_data(find(timing2_data(:,3)>0),1)));
-%         cur_miss2 = mean(nonzeros(timing2_data(find(timing2_data(:,3)==0),1)));
-% 
-%         reac_hits1 = mean(nonzeros(timing1_data(find(timing1_data(:,3)>0),2)));
-%         reac_miss1 = mean(nonzeros(timing1_data(find(timing1_data(:,3)==0),2)));
-%         reac_hits2 = mean(nonzeros(timing2_data(find(timing2_data(:,3)>0),2)));
-%         reac_miss2 = mean(nonzeros(timing2_data(find(timing2_data(:,3)==0),2)));  
 
         % calculate results with curiosity as independent measure
         timing1_data = sortrows(timing1_data_all,3);
