@@ -24,10 +24,10 @@ for s=1:length(subjects)
 %     inc_reac_hits = mean(nonzeros(inc_data(find(inc_data(:,3)>0),2)));
 %     inc_reac_miss = mean(nonzeros(inc_data(find(inc_data(:,3)==0),2)));
     
-    % calculate results with curiosity as independent measure
+    % calculate results with metamemory as independent measure
     con_data = sortrows(con_data_all,1);
     inc_data = sortrows(inc_data_all,1);
-    % delete rows where curiosity is zero
+    % delete rows where metamemory is zero
     con_data(find(con_data(:,1)==0),:) = []; 
     inc_data(find(inc_data(:,1)==0),:) = [];
         
