@@ -12,18 +12,7 @@ for s=1:length(subjects)
     
     con_av = mean(con_data_all(:,3));
     inc_av = mean(inc_data_all(:,3));
-    
-%     % calculate results with memory as independent measure
-%     con_cur_hits = mean(nonzeros(con_data(find(con_data(:,3)>0),1)));
-%     con_cur_miss = mean(nonzeros(con_data(find(con_data(:,3)==0),1)));
-%     inc_cur_hits = mean(nonzeros(inc_data(find(inc_data(:,3)>0),1)));
-%     inc_cur_miss = mean(nonzeros(inc_data(find(inc_data(:,3)==0),1)));
-%     
-%     con_reac_hits = mean(nonzeros(con_data(find(con_data(:,3)>0),2)));
-%     con_reac_miss = mean(nonzeros(con_data(find(con_data(:,3)==0),2)));
-%     inc_reac_hits = mean(nonzeros(inc_data(find(inc_data(:,3)>0),2)));
-%     inc_reac_miss = mean(nonzeros(inc_data(find(inc_data(:,3)==0),2)));
-    
+      
     % calculate results with curiosity as independent measure
     con_data = sortrows(con_data_all,1);
     inc_data = sortrows(inc_data_all,1);
